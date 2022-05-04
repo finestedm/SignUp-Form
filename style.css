@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+    font-family: 'Readex Pro', 'Arial', sans-serif;
+    font-size: clamp(1.25rem, 2vw, 1.7rem);
+    box-sizing: content-box;
+}
+
+:root {
+    --base-color: #E3EBEE;
+    --text-color: #33363A;
+    --supp-color: #ffffff;
+    --acce-color: #2171EA;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --base-color: #0F1A20;
+        --text-color: #EBEBEB;
+        --supp-color: #1A2931;
+        --acce-color: #2171EA;
+    }
+}
+
+strong {
+    text-decoration: underline;
+}
+
+abbr {
+    text-decoration: none;
+}
+
+body {
+    margin: 0px;
+    display: flex;
+    height: 100vh;
+    color: var(--text-color);
+}
+
+splash {
+    background: url(./images/taiki-ishikawa-T2_y9Y5hcIs-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    flex: 1 1 40%;
+    z-index: 2;
+
+}
+
+container {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 60%;
+}
+
+container>* {
+    flex: 1 1 auto;
+    padding: 3rem;
+    background-color: var(--base-color);
+}
+
+header {
+    font-weight: 300;
+    text-align: justify;
+    margin: -20px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    background-color: var(--supp-color);
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+footer {
+    flex: 1 1 7%;
+}
+
+form label,
+p {
+    font-size: .7rem;
+    font-weight: 100;
+    margin-bottom: .2rem;
+}
+
+select {
+    background-color: transparent;
+    appearance: none;
+    position: relative;
+}
+
+select::after {
+    position: absolute;
+    content: "▼";
+    font-size: 1rem;
+    top: 0px;
+    right: 0px;
+    height: 1rem;
+    width: 1rem;
+}
+
+ul {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0 50px;
+
+}
+
+form {
+    border: none;
+    margin: -70px 0;
+
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 250px;
+    margin: 10px 0;
+    position: relative;
+}
+
+input,
+select {
+    appearance: none;
+    height: 1.2rem;
+    background-color: transparent;
+    font-family: 'Readex Pro', 'Arial', sans-serif;
+    border: 1px solid var(--base-color);
+    border-radius: .2rem;
+    color: var(--text-color);
+    font-size: .7rem;
+    width: 100%;
+    box-sizing: content-box;
+    transition: all 0.2s;
+}
+
+
+input:focus,
+input:hover,
+select:focus,
+select:hover {
+    border: 1px solid var(--acce-color);
+}
+
+input:focus-visible,
+select:focus-visible {
+    border: 1px solid var(--acce-color);
+}
+
+input:valid:not(:placeholder-shown) {
+    border: 1px solid green;
+}
+
+input:invalid:not(:placeholder-shown),
+input:invalid:not(:placeholder-shown),
+select:invalid,
+select:invalid {
+    border: 1px solid rgb(255, 166, 0);
+}
+
+input.invalid {
+    border: 1px solid rgb(255, 166, 0);
+}
+
+p {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+}
+
+button[type='submit'] {
+    height: 2rem;
+    width: 6rem;
+    font-family: 'Readex Pro', 'Arial', sans-serif;
+    font-size: .7rem;
+    font-stretch: condensed;
+    color: var(--text-color);
+    background-color: var(--acce-color);
+    border: none;
+    border-radius: .2rem;
+}
+
+footer {
+    background-color: var(--supp-color);
+    flex: 0 0 2rem;
+    padding: 0;
+}

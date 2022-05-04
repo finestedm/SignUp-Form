@@ -1,0 +1,34 @@
+const password = document.querySelector('#password');
+password.addEventListener('keyup', () => {
+    checkPasswordMatch();
+});
+const passwordConfirmation = document.querySelector('#password-confirm');
+passwordConfirmation.addEventListener('keyup', () => {
+    checkPasswordMatch();
+});
+
+const error = document.querySelector('li > p');
+error.style.opacity = '0';
+
+
+function checkPasswordMatch() {
+    if (password.value === passwordConfirmation.value) {
+        error.style.opacity = '0';
+        passwordConfirmation.classList.remove('invalid');
+        passwordConfirmation.classList.add('valid');
+        password.classList.remove('invalid');
+        password.classList.add('valid');
+    } else if (passwordConfirmation.value.length === 0) {
+        error.style.opacity = '0';
+        passwordConfirmation.classList.remove('invalid');
+        passwordConfirmation.classList.add('valid');
+        password.classList.remove('invalid');
+        password.classList.add('valid');
+    } else {
+        error.style.opacity = '1';
+        passwordConfirmation.classList.remove('valid');
+        passwordConfirmation.classList.add('invalid');
+        password.classList.remove('valid');
+        password.classList.add('invalid');
+    }
+}
