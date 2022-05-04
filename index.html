@@ -10,7 +10,10 @@
 </head>
 <body>
     <splash>
-
+        <div id="splash-background">
+            <img src="./images/odin-lined.png">
+            <!-- <p>ODIN</p> -->
+        </div>
     </splash>
 
     <container>
@@ -22,11 +25,11 @@
                 <ul>
                     <li>
                         <label for = 'first-name'>First Name</label>
-                        <input type="text" id="first-name" name="first-name" placeholder="">
+                        <input type="text" id="first-name" name="first-name" placeholder=" ">
                     </li>
                     <li>
                         <label for = 'last-name'>Last Name</label>
-                        <input type="text" id="last-name" name="last-name" placeholder="">
+                        <input type="text" id="last-name" name="last-name" placeholder=" ">
                     </li>
                     <li>
                         <label for="gender">Gender</label>
@@ -40,7 +43,7 @@
                     </li>
                     <li> 
                         <label for = 'email'>E-mail<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
-                        <input type="email" id="email" name="email" required placeholder="">
+                        <input type="email" id="email" name="email" required placeholder="address@example.com">
                     </li>
                     <li>
                         <label for = 'password'>Password<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
@@ -48,7 +51,7 @@
                     </li>
                     <li>
                         <label for = 'password-confirm'>Confirm Password</label>
-                        <p>Password mismatch</p>
+                        <p>*Password mismatch</p>
                         <input type="password" id="password-confirm" name="password-confirm" required placeholder="">
                     </li>
                 </ul>
@@ -56,7 +59,7 @@
         </main>
         <lower>
             <button type="submit" form='signup' id="btnSubmit">Sign Up</button>
-
+            <p>You have an account already? <a href="./index.html">Log In.</a></p>
         </lower>
         <footer>
 

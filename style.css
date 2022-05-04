@@ -11,6 +11,8 @@
     --text-color: #33363A;
     --supp-color: #ffffff;
     --acce-color: #2171EA;
+    --vali-color: #17a864;
+    font-weight: 300;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,6 +21,8 @@
         --text-color: #EBEBEB;
         --supp-color: #1A2931;
         --acce-color: #2171EA;
+        --vali-color: #6eeeb2;
+        font-weight: 200;
     }
 }
 
@@ -42,8 +46,34 @@ splash {
     background-size: cover;
     background-position: center;
     flex: 1 1 40%;
-    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+splash>div {
+
+    width: 100%;
+    height: 20vh;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #00000077;
+    padding: .5rem;
+
+}
+
+splash img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+splash>div>p {
+    color: var(--supp-color);
+    font-size: 3rem;
 }
 
 container {
@@ -59,25 +89,28 @@ container>* {
 }
 
 header {
-    font-weight: 300;
     text-align: justify;
     margin: -20px 0;
+    display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 main {
     background-color: var(--supp-color);
     box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
     z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 footer {
     flex: 1 1 7%;
 }
 
-form label,
-p {
+form label {
     font-size: .7rem;
     font-weight: 100;
     margin-bottom: .2rem;
@@ -123,13 +156,20 @@ li {
     position: relative;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--supp-color) inset !important;
+}
+
 input,
 select {
     appearance: none;
     height: 1.2rem;
     background-color: transparent;
     font-family: 'Readex Pro', 'Arial', sans-serif;
-    border: 1px solid var(--base-color);
+    border: 1px solid var(--text-color);
     border-radius: .2rem;
     color: var(--text-color);
     font-size: .7rem;
@@ -141,24 +181,21 @@ select {
 
 input:focus,
 input:hover,
-select:focus,
-select:hover {
-    border: 1px solid var(--acce-color);
-}
-
 input:focus-visible,
+select:focus,
+select:hover,
 select:focus-visible {
     border: 1px solid var(--acce-color);
 }
 
-input:valid:not(:placeholder-shown) {
-    border: 1px solid green;
+input[type="text"]:valid:not(:placeholder-shown),
+input[type="email"]:valid:not(:placeholder-shown) {
+    border: 1px solid var(--vali-color);
 }
 
-input:invalid:not(:placeholder-shown),
-input:invalid:not(:placeholder-shown),
-select:invalid,
-select:invalid {
+input[type="text"]:invalid:not(:placeholder-shown),
+input[type="email"]:invalid:not(:placeholder-shown),
+select:invalid:nth-last-child(1n+3) {
     border: 1px solid rgb(255, 166, 0);
 }
 
@@ -166,10 +203,18 @@ input.invalid {
     border: 1px solid rgb(255, 166, 0);
 }
 
-p {
+input.valid {
+    border: 1px solid var(--vali-color);
+    ;
+}
+
+
+label[for="password-confirm"]+p {
     position: absolute;
-    top: 0;
-    right: 0;
+    font-size: .5rem;
+    color: rgb(255, 166, 0);
+    bottom: -20px;
+    left: 0;
     margin: 0;
 }
 
@@ -183,10 +228,59 @@ button[type='submit'] {
     background-color: var(--acce-color);
     border: none;
     border-radius: .2rem;
+    transition: all .2s ease-out;
+}
+
+button[type='submit']:hover,
+button[type='submit']:focus,
+button[type='submit']:focus-visible {
+    background-color: #4790ff;
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02);
+    scale: 1.02;
+}
+
+button[type='submit']:active {
+    background-color: #195bbe;
+    -webkit-transform: scale(.98);
+    transform: scale(.98);
+    scale: .98;
 }
 
 footer {
     background-color: var(--supp-color);
     flex: 0 0 2rem;
     padding: 0;
+}
+
+button[type='submit']+p {
+    font-weight: 300;
+}
+
+button[type='submit']+p a {
+    font-weight: 500;
+    text-decoration: underline;
+    color: var(--text-color);
+}
+
+@media (max-device-width: 900px) {
+    body {
+        flex-direction: column;
+    }
+
+    splash {
+        min-height: 400px;
+    }
+
+    splash>div {
+        height: 20vh;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background-color: #00000000;
+        padding: .5rem;
+    }
+
 }

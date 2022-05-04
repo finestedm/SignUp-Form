@@ -12,7 +12,7 @@ error.style.opacity = '0';
 
 
 function checkPasswordMatch() {
-    if (password.value === passwordConfirmation.value) {
+    if ((password.value === passwordConfirmation.value) && (passwordConfirmation.value.length != 0)) {
         error.style.opacity = '0';
         passwordConfirmation.classList.remove('invalid');
         passwordConfirmation.classList.add('valid');
@@ -21,9 +21,7 @@ function checkPasswordMatch() {
     } else if (passwordConfirmation.value.length === 0) {
         error.style.opacity = '0';
         passwordConfirmation.classList.remove('invalid');
-        passwordConfirmation.classList.add('valid');
         password.classList.remove('invalid');
-        password.classList.add('valid');
     } else {
         error.style.opacity = '1';
         passwordConfirmation.classList.remove('valid');
