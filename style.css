@@ -43,7 +43,8 @@ abbr {
 body {
     margin: 0px;
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     color: var(--text-color);
     background-color: var(--base-color);
 }
