@@ -30,3 +30,15 @@ function checkPasswordMatch() {
         password.classList.add('invalid');
     }
 }
+
+function showPassword() {
+    var passwordInput = document.getElementById("password");
+    var confirmPasswordInput = document.getElementById("password-confirm");
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        confirmPasswordInput.type = "text";
+    } else {
+        passwordInput.type = "password";
+        confirmPasswordInput.type = "password";
+    }
+} 

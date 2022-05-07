@@ -68,7 +68,6 @@ splash>div {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: #00000077;
     padding: .5rem;
 
 }
@@ -196,14 +195,13 @@ select:focus-visible {
     border: 1px solid var(--acce-color);
 }
 
-input[type="text"]:valid:not(:placeholder-shown),
-input[type="email"]:valid:not(:placeholder-shown) {
+input[type="text"]:valid:not(#password):not(#password-confirm):not(:placeholder-shown),
+input[type="email"]:valid:not(#password):not(#password-confirm):not(:placeholder-shown) {
     border: 1px solid var(--vali-color);
 }
 
-input[type="text"]:invalid:not(:placeholder-shown),
-input[type="email"]:invalid:not(:placeholder-shown),
-select:invalid:nth-last-child(1n+3) {
+input[type="text"]:invalid:not(#password):not(#password-confirm):not(:placeholder-shown),
+input[type="email"]:invalid:not(#password):not(#password-confirm):not(:placeholder-shown) {
     border: 1px solid rgb(255, 166, 0);
 }
 
@@ -213,9 +211,22 @@ input.invalid {
 
 input.valid {
     border: 1px solid var(--vali-color);
-    ;
 }
 
+input #password {
+    position: relative;
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    bottom: .35rem;
+    right: .3rem;
+    background-image: url(./images/b9da86621775cd18447abbfacf20c04c.svg);
+    height: auto;
+    width: auto;
+    background-repeat: no-repeat;
+    border: none;
+}
 
 label[for="password-confirm"]+p {
     position: absolute;

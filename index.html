@@ -50,6 +50,7 @@
                     <li>
                         <label for = 'password'>Password<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
                         <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required placeholder="">
+                            <input type="checkbox" onclick="showPassword()">
                     </li>
                     <li>
                         <label for = 'password-confirm'>Confirm Password</label>
