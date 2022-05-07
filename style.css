@@ -7,7 +7,7 @@
 }
 
 :root {
-    --base-color: #eaeff1;
+    --base-color: #eaf1f5;
     --text-color: #3b3f44;
     --supp-color: #ffffff;
     --acce-color: #2171EA;
@@ -20,13 +20,13 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --base-color: #0F1A20;
-        --text-color: #EBEBEB;
-        --supp-color: #1A2931;
+        --base-color: #19212e;
+        --text-color: #ebe5df;
+        --supp-color: #232e41;
         --acce-color: #2171EA;
         --vali-color: #6eeeb2;
-        --bord-color: #151f24;
-        --inpu-color: #162228;
+        --bord-color: #0e141d2f;
+        --inpu-color: #19212e;
 
         font-weight: 200;
     }
@@ -50,7 +50,7 @@ body {
 }
 
 splash {
-    background: url(./images/taiki-ishikawa-T2_y9Y5hcIs-unsplash.jpg);
+    background: url(./images/victor-2PJMDIgK9EA-unsplash.jpg);
     background-size: cover;
     background-position: center;
     flex: 1 1 40%;
@@ -181,7 +181,8 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px var(--bord-color) inset !important;
+    appearance: none;
+    -webkit-box-shadow: 0 0 0 30px var(--inpu-color) inset !important;
     border: 1px solid var(--vali-color);
     color: var(--text-color);
 }
@@ -243,8 +244,8 @@ button[type='submit'] {
     font-family: 'Readex Pro', 'Arial', sans-serif;
     font-size: .8rem;
     font-stretch: condensed;
-    color: #EBEBEB;
-    background-color: var(--acce-color);
+    color: #162228;
+    background-color: #FFC45C;
     border: none;
     border-radius: .2rem;
     transition: all .2s ease-out;
@@ -255,7 +256,7 @@ button[type='submit'] {
 button[type='submit']:hover,
 button[type='submit']:focus,
 button[type='submit']:focus-visible {
-    background-color: #4790ff;
+    background-color: #ffd080;
     -webkit-transform: scale(1.02);
     transform: scale(1.02);
     scale: 1.02;
@@ -264,7 +265,7 @@ button[type='submit']:focus-visible {
 }
 
 button[type='submit']:active {
-    background-color: #195bbe;
+    background-color: #d19c41;
     -webkit-transform: scale(.98);
     transform: scale(.98);
     scale: .98;
