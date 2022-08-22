@@ -41,4 +41,18 @@ function showPassword() {
         passwordInput.type = "password";
         confirmPasswordInput.type = "password";
     }
-} 
+}
+
+const inputForm = document.getElementById('signup');
+const inputName = document.getElementById('first-name');
+
+inputName.addEventListener('input', () => {
+    if (inputName.value === '') {
+        inputName.setCustomValidity('Enter your username!');
+        inputName.reportValidity();
+    } else if (inputName.value.length < 3) {
+        inputName.setCustomValidity('Name must be longer than 2 letters!');
+    } else {
+        inputName.setCustomValidity('');
+    }
+});
